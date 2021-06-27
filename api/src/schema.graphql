@@ -1,0 +1,49 @@
+type Query {
+  me: User!
+  todos: [Todo!]
+  goals: [Goal!]
+  notes: [Note!]
+}
+
+type Mutation {
+  createUser(data: CreateUserInput!): User!
+  editUser(data: CreateUserInput!): User!
+}
+
+input CreateUserInput {
+  name: String!
+  username: String!
+  age: Int
+  sex: String
+}
+
+type User {
+  id: ID!
+  name: String!
+  username: String!
+  age: Int
+  sex: String
+}
+
+type Todo {
+  id: ID!
+  title: String!
+  category: String!
+  date: String!
+  status: String!
+}
+
+type Goal {
+  id: ID!
+  title: String!
+  category: String!
+  date: String!
+  status: String!
+}
+
+type Note {
+  id: ID!
+  title: String!
+  body: String!
+  status: String!
+}
